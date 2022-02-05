@@ -99,9 +99,13 @@
 		ABF8E5F227AE6350002CF49C /* ASB */ = {
 			isa = PBXGroup;
 			children = (
+				ABF8E62727AE65DB002CF49C /* Extensions */,
+				ABF8E62627AE65D6002CF49C /* API */,
+				ABF8E62527AE65D0002CF49C /* Controller */,
+				ABF8E62427AE65CA002CF49C /* ViewModel */,
+				ABF8E62327AE65C4002CF49C /* Model */,
 				ABF8E5F327AE6350002CF49C /* AppDelegate.swift */,
 				ABF8E5F527AE6350002CF49C /* SceneDelegate.swift */,
-				ABF8E5F727AE6350002CF49C /* ViewController.swift */,
 				ABF8E5F927AE6350002CF49C /* Main.storyboard */,
 				ABF8E5FC27AE6353002CF49C /* Assets.xcassets */,
 				ABF8E5FE27AE6353002CF49C /* LaunchScreen.storyboard */,
@@ -125,6 +129,42 @@
 				ABF8E61627AE6353002CF49C /* ASBUITestsLaunchTests.swift */,
 			);
 			path = ASBUITests;
+			sourceTree = "<group>";
+		};
+		ABF8E62327AE65C4002CF49C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABF8E62427AE65CA002CF49C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ABF8E62527AE65D0002CF49C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABF8E5F727AE6350002CF49C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ABF8E62627AE65D6002CF49C /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		ABF8E62727AE65DB002CF49C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,7 +496,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -484,7 +524,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
