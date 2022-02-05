@@ -9,15 +9,16 @@ import UIKit
 
 private let reuseIdentifier = "TransactionsCell"
 
-class TransactionsTableViewController: UITableViewController {
+class TransactionsViewController: UIViewController {
         
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.rowHeight = 60
+        return tableView
+    }()
+    
     private let transactionsViewModel = TransactionViewModel()
     
-    private var transactions: [Transaction] = [] {
-        didSet {
-            createSections()
-        }
-    }
     private var sections: [DateSection] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -38,6 +39,8 @@ class TransactionsTableViewController: UITableViewController {
     private func configureUI() {
         view.backgroundColor = .white
         
+        view.addSubview(tableView)
+        tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
     }
     
     private func configureNavigationBar() {
@@ -46,18 +49,20 @@ class TransactionsTableViewController: UITableViewController {
     }
     
     private func configureTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
 
     private func callToViewModelForTransactions() {
         transactionsViewModel.listener = {
-            self.transactions = self.transactionsViewModel.transactions
+            self.createSections(transactions: self.transactionsViewModel.transactions)
         }
         
         transactionsViewModel.callFuncToGetTransactionData()
     }
     
-    private func createSections() {
+    private func createSections(transactions: [Transaction]) {
         let groups = Dictionary(grouping: transactions, by: {$0.formatTransactionDate()})
         
         sections = groups.map { (key, values) in
@@ -67,21 +72,34 @@ class TransactionsTableViewController: UITableViewController {
         sections.sort{(lhs, rhs) in (lhs.date.convertStringToDate()) > (rhs.date.convertStringToDate())}
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+   
+}
+
+extension TransactionsViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].date
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].transaction.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         cell.textLabel?.text = sections[indexPath.section].transaction[indexPath.row].summary
         return cell
+    }
+}
+
+extension TransactionsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let transactionDetailVC = TransactionDetailViewController()
+        transactionDetailVC.transaction = sections[indexPath.section].transaction[indexPath.row]
+        navigationController?.pushViewController(transactionDetailVC, animated: true)
+        
     }
 }
