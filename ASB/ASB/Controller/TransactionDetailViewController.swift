@@ -14,6 +14,10 @@ class TransactionDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
+        if let transaction = transaction {
+            print(transaction.summary)
+        }
     }
 
     private func configureUI() {

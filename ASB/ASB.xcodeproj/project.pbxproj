@@ -23,6 +23,7 @@
 		ABF8E63127AE74DD002CF49C /* DateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E63027AE74DD002CF49C /* DateSection.swift */; };
 		ABF8E63327AE7790002CF49C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E63227AE7790002CF49C /* String.swift */; };
 		ABF8E63527AE7B7D002CF49C /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E63427AE7B7D002CF49C /* TransactionDetailViewController.swift */; };
+		ABF8E63827AE817C002CF49C /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E63727AE817C002CF49C /* TransactionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		ABF8E63027AE74DD002CF49C /* DateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSection.swift; sourceTree = "<group>"; };
 		ABF8E63227AE7790002CF49C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		ABF8E63427AE7B7D002CF49C /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
+		ABF8E63727AE817C002CF49C /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				ABF8E62627AE65D6002CF49C /* API */,
 				ABF8E62527AE65D0002CF49C /* Controller */,
 				ABF8E62427AE65CA002CF49C /* ViewModel */,
+				ABF8E63627AE815E002CF49C /* View */,
 				ABF8E62327AE65C4002CF49C /* Model */,
 				ABF8E5F327AE6350002CF49C /* AppDelegate.swift */,
 				ABF8E5F527AE6350002CF49C /* SceneDelegate.swift */,
@@ -186,6 +189,14 @@
 				ABF8E63227AE7790002CF49C /* String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ABF8E63627AE815E002CF49C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABF8E63727AE817C002CF49C /* TransactionTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABF8E5F827AE6350002CF49C /* TransactionsViewController.swift in Sources */,
+				ABF8E63827AE817C002CF49C /* TransactionTableViewCell.swift in Sources */,
 				ABF8E62D27AE69A3002CF49C /* TransactionsViewModel.swift in Sources */,
 				ABF8E5F427AE6350002CF49C /* AppDelegate.swift in Sources */,
 				ABF8E63327AE7790002CF49C /* String.swift in Sources */,

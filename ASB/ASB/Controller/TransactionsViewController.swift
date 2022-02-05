@@ -14,6 +14,7 @@ class TransactionsViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = 60
+        
         return tableView
     }()
     
@@ -51,7 +52,7 @@ class TransactionsViewController: UIViewController {
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(TransactionTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
 
     private func callToViewModelForTransactions() {
@@ -71,7 +72,6 @@ class TransactionsViewController: UIViewController {
         
         sections.sort{(lhs, rhs) in (lhs.date.convertStringToDate()) > (rhs.date.convertStringToDate())}
     }
-    
    
 }
 
@@ -89,8 +89,8 @@ extension TransactionsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        cell.textLabel?.text = sections[indexPath.section].transaction[indexPath.row].summary
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! TransactionTableViewCell
+        cell.transaction = sections[indexPath.section].transaction[indexPath.row]
         return cell
     }
 }
