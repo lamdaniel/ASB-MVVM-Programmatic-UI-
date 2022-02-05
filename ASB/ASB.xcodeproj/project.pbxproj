@@ -19,6 +19,7 @@
 		ABF8E62927AE6732002CF49C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E62827AE6732002CF49C /* Transaction.swift */; };
 		ABF8E62B27AE68AE002CF49C /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E62A27AE68AE002CF49C /* TransactionService.swift */; };
 		ABF8E62D27AE69A3002CF49C /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E62C27AE69A3002CF49C /* TransactionsViewModel.swift */; };
+		ABF8E62F27AE6C0A002CF49C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E62E27AE6C0A002CF49C /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		ABF8E62827AE6732002CF49C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		ABF8E62A27AE68AE002CF49C /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		ABF8E62C27AE69A3002CF49C /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		ABF8E62E27AE6C0A002CF49C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		ABF8E62727AE65DB002CF49C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ABF8E62E27AE6C0A002CF49C /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				ABF8E62D27AE69A3002CF49C /* TransactionsViewModel.swift in Sources */,
 				ABF8E5F427AE6350002CF49C /* AppDelegate.swift in Sources */,
 				ABF8E62927AE6732002CF49C /* Transaction.swift in Sources */,
+				ABF8E62F27AE6C0A002CF49C /* UIView.swift in Sources */,
 				ABF8E62B27AE68AE002CF49C /* TransactionService.swift in Sources */,
 				ABF8E5F627AE6350002CF49C /* SceneDelegate.swift in Sources */,
 			);
