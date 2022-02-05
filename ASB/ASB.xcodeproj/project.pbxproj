@@ -17,6 +17,7 @@
 		ABF8E61527AE6353002CF49C /* ASBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E61427AE6353002CF49C /* ASBUITests.swift */; };
 		ABF8E61727AE6353002CF49C /* ASBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E61627AE6353002CF49C /* ASBUITestsLaunchTests.swift */; };
 		ABF8E62927AE6732002CF49C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E62827AE6732002CF49C /* Transaction.swift */; };
+		ABF8E62B27AE68AE002CF49C /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E62A27AE68AE002CF49C /* TransactionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		ABF8E61427AE6353002CF49C /* ASBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASBUITests.swift; sourceTree = "<group>"; };
 		ABF8E61627AE6353002CF49C /* ASBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASBUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ABF8E62827AE6732002CF49C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		ABF8E62A27AE68AE002CF49C /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		ABF8E62627AE65D6002CF49C /* API */ = {
 			isa = PBXGroup;
 			children = (
+				ABF8E62A27AE68AE002CF49C /* TransactionService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				ABF8E5F827AE6350002CF49C /* ViewController.swift in Sources */,
 				ABF8E5F427AE6350002CF49C /* AppDelegate.swift in Sources */,
 				ABF8E62927AE6732002CF49C /* Transaction.swift in Sources */,
+				ABF8E62B27AE68AE002CF49C /* TransactionService.swift in Sources */,
 				ABF8E5F627AE6350002CF49C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
