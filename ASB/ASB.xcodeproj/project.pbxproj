@@ -20,6 +20,8 @@
 		ABF8E62B27AE68AE002CF49C /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E62A27AE68AE002CF49C /* TransactionService.swift */; };
 		ABF8E62D27AE69A3002CF49C /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E62C27AE69A3002CF49C /* TransactionsViewModel.swift */; };
 		ABF8E62F27AE6C0A002CF49C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E62E27AE6C0A002CF49C /* UIView.swift */; };
+		ABF8E63127AE74DD002CF49C /* DateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E63027AE74DD002CF49C /* DateSection.swift */; };
+		ABF8E63327AE7790002CF49C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8E63227AE7790002CF49C /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		ABF8E62A27AE68AE002CF49C /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		ABF8E62C27AE69A3002CF49C /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		ABF8E62E27AE6C0A002CF49C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		ABF8E63027AE74DD002CF49C /* DateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSection.swift; sourceTree = "<group>"; };
+		ABF8E63227AE7790002CF49C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF8E62827AE6732002CF49C /* Transaction.swift */,
+				ABF8E63027AE74DD002CF49C /* DateSection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF8E62E27AE6C0A002CF49C /* UIView.swift */,
+				ABF8E63227AE7790002CF49C /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,10 +319,12 @@
 				ABF8E5F827AE6350002CF49C /* TransactionsTableViewController.swift in Sources */,
 				ABF8E62D27AE69A3002CF49C /* TransactionsViewModel.swift in Sources */,
 				ABF8E5F427AE6350002CF49C /* AppDelegate.swift in Sources */,
+				ABF8E63327AE7790002CF49C /* String.swift in Sources */,
 				ABF8E62927AE6732002CF49C /* Transaction.swift in Sources */,
 				ABF8E62F27AE6C0A002CF49C /* UIView.swift in Sources */,
 				ABF8E62B27AE68AE002CF49C /* TransactionService.swift in Sources */,
 				ABF8E5F627AE6350002CF49C /* SceneDelegate.swift in Sources */,
+				ABF8E63127AE74DD002CF49C /* DateSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

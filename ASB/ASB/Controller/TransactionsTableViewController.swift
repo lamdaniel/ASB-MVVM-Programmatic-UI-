@@ -12,6 +12,19 @@ private let reuseIdentifier = "TransactionsCell"
 class TransactionsTableViewController: UITableViewController {
         
     private let transactionsViewModel = TransactionViewModel()
+    
+    private var transactions: [Transaction] = [] {
+        didSet {
+            createSections()
+        }
+    }
+    private var sections: [DateSection] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,21 +51,37 @@ class TransactionsTableViewController: UITableViewController {
 
     private func callToViewModelForTransactions() {
         transactionsViewModel.listener = {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            self.transactions = self.transactionsViewModel.transactions
         }
         
         transactionsViewModel.callFuncToGetTransactionData()
     }
     
+    private func createSections() {
+        let groups = Dictionary(grouping: transactions, by: {$0.formatTransactionDate()})
+        
+        sections = groups.map { (key, values) in
+            return DateSection(date: key, transaction: values)
+        }
+        
+        sections.sort{(lhs, rhs) in (lhs.date.convertStringToDate()) > (rhs.date.convertStringToDate())}
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].date
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        transactionsViewModel.transactions.count
+        return sections[section].transaction.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        cell.textLabel?.text = transactionsViewModel.transactions[indexPath.row].summary
+        cell.textLabel?.text = sections[indexPath.section].transaction[indexPath.row].summary
         return cell
     }
 }
